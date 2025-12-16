@@ -1,4 +1,4 @@
-name: Compile & Deploy source code to Github Pages when push in 'master' branch
+name: Build & Deploy project to Github Pages when push in 'master' branch
 on:
   push:
     branches:
@@ -6,19 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
-      - run: npm install
-      - run: npm run build
-
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./dist
+    uses: ./.github/actions/build.yml
 
   deploy:
     needs: build
