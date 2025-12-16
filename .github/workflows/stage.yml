@@ -1,5 +1,6 @@
 name: Build project to check the error in 'stage-v1' branch
 on:
+  workflow_dispatch:
   push:
     branches:
       - stage-v1
