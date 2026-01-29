@@ -1,3 +1,27 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	--color-bg: rgb(var(--bg));
+	--color-fg: rgb(var(--fg));
+	--color-primary: rgb(var(--primary));
+	--color-secondary: rgb(var(--secondary));
+	--color-tertiary: rgb(var(--tertiary));
+}
+
+:root {
+	--bg: 0 0 0;
+	--fg: 0 0 0;
+	--primary: 0 0 0;
+	--secondary: 0 0 0;
+	--tertiary: 0 0 0;
+}
+
+[data-theme='dark'] {
+	--bg: 0 0 0;
+	--fg: 0 0 0;
+	--primary: 0 0 0;
+	--secondary: 0 0 0;
+	--tertiary: 0 0 0;
+}
